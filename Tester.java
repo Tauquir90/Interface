@@ -1,11 +1,8 @@
 public class Tester {
     public static void main(String...args)
     {
-        Cricketer cr = new MyCricketer("Shahid Afridi",40,400,false
-        ,false,true);
-        cr.showStatistics();
-        System.out.println();
-        System.out.println("--------------------------------");
-        cr.gameChanger();
+        MyMessanger m = new MineMessanger();
+        m.sendMessage("Tauquir","Shabbar"
+        ,"I am working hard!!");
     }
 }
