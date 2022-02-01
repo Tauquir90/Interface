@@ -1,15 +1,20 @@
+
 public class Tester {
-    public static void main(String...args) throws CloneNotSupportedException {
-        Student st = new Student("S111","TAUQUIR",
-                "MUKUNDAPUR","xyz@gmail.com",
-                "7044607942");
-        System.out.println("ORIGINAL STUDENT DETAILS........");
-        System.out.println("ORIGINAL OBJECT  :"+st);
-        st.getDetails();
-        Object obj = st.clone();
-        Student dup = (Student)obj;
-        System.out.println("DUPLICATE OBJECT: "+dup);
-        System.out.println("SHOWING DUPLICATE OBJECT DETAILS ...");
-        dup.getDetails();
+    public static void main(String...args) throws CloneNotSupportedException
+    {
+        Record orig_rec = new Record(400,false,false,true,8000,400);
+        Player orig_pl = new Player("Afridi", 40, orig_rec);
+        System.out.println("ORIGINAL PLAYER DETAILS.....");
+        orig_pl.getPlayerDetails();
+        Player dup_pl = (Player)orig_pl.clone();
+        System.out.println("DUPLICATE PLAYER DERTAILS....");
+        dup_pl.getPlayerDetails();
+        System.out.println("original player ref: "+orig_pl);
+        System.out.println("duplicate player ref: "+dup_pl);
+        System.out.println("original record ref :"+orig_pl.record);
+        System.out.println("duplicate record  ref: "+dup_pl.record);
     }
 }
+
+
+
