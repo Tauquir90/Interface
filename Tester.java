@@ -1,10 +1,11 @@
 public class Tester {
     public static void main(String...args)
     {
-        Zoo z = new Zoo();
-        z.playAnimalSound(new Cat());
-        z.playAnimalSound(new Dog());
-        z.playAnimalSound(new Lion());
+        Player pl = new Player("Afridi",false,false,true);
+        pl.getPlayerDetails();
+        Player.MyPlayer pm = pl.new MyPlayer("Afridi",false,false,true,40,400);
+        pm.getPlayerDetails();
+        pm.showFavouritePlayerDetails();
 
     }
 }

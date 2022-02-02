@@ -1,27 +1,42 @@
-
-public class Player implements Cloneable {
+public class Player {
     String name;
-    int age;
-    Record record;
+    boolean isBatter;
+    boolean isBowler;
+    boolean isAllRounder;
 
-    public Player(String name, int age, Record record) {
-
-        this.name = name;
-        this.age = age;
-        this.record = record;
+    public Player(String name,boolean isBowler,boolean isBatter,boolean isAllRounder) {
+        this.name=name;
+        this.isBatter=isBatter;
+        this.isBowler=isBowler;
+        this.isAllRounder = isAllRounder;
     }
-
-    public void getPlayerDetails() {
-        System.out.println("player Details..............");
-        System.out.println();
-        System.out.println("PLAYER NAME     :" + name);
-        System.out.println("PLAYER AGE     :" + age);
-        System.out.println();
-        record.showStatistics();
+    public void getPlayerDetails()
+    {
+        System.out.println("PLAYER DETAILS..........");
+        System.out.println("player name          :"+name);
+        System.out.println("is batter            :"+isBatter);
+        System.out.println("is bowler            :"+isBowler);
+        System.out.println("is all rounder        :"+isAllRounder);
     }
+    class MyPlayer extends Player
+    {
+       int age;
+       int matches;
 
-    public Object clone() throws CloneNotSupportedException {
-        Object obj = super.clone();
-        return obj;
+
+        public MyPlayer(String name, boolean isBowler, boolean isBatter, boolean isAllRounder,int age,int matches) {
+            super(name, isBowler, isBatter, isAllRounder);
+            this.age=age;
+            this.matches=matches;
+        }
+
+        public void showFavouritePlayerDetails()
+        {
+            System.out.println("Showing fav player details......");
+            getPlayerDetails();
+            System.out.println();
+            System.out.println("player  age            :"+age);
+            System.out.println("matches played         :"+matches);
+        }
     }
 }
